@@ -1,0 +1,8 @@
+FROM python:3.8-slim-buster
+WORKDIR /code
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY ./*.py ./
+COPY config.ini .
+RUN mkdir logs
+CMD [ "python", "main.py"]

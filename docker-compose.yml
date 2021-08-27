@@ -1,0 +1,28 @@
+version: '3.1'
+services:  
+    crawler:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        networks:
+            - app-tier
+        volumes:
+            - ./logs/:/code/logs
+            
+    db:
+        image: mysql:8.0.23
+        restart: always
+        environment:
+            MYSQL_HOST: localhost
+            MYSQL_PORT: 3306
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: postman
+        ports:
+            - "3307:3306"
+        networks:
+            - app-tier
+networks:
+    app-tier:
+        driver: bridge
