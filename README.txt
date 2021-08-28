@@ -99,6 +99,7 @@ None
 --------------------------------
 [X] Addition of logging and volume mounts to efficiently monitor api requests.
 [X] Containerization for easy deployment.
+[X] Extensive documentation of scripts.
 [ ] Usage of a cloud database to host the data.
 [ ] Added unit testing following good production grade software development practices.
 [ ] Development of a CircleCI/TravisCI build based on a subset of data upon every push to GitHub. 
