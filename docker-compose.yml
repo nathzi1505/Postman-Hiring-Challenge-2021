@@ -9,8 +9,7 @@ services:
         networks:
             - app-tier
         volumes:
-            - ./logs/:/code/logs
-            
+            - ./logs/:/code/logs        
     db:
         image: mysql:8.0.23
         restart: always
